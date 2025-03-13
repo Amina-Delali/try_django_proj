@@ -1,0 +1,18 @@
+
+notes/migrations/*
+notes/migrations
+try_djano/migrations/*
+try_djano/migrations
+try_djano/__pycache__/*
+try_djano/__pycache__
+
+.vercel
+*.log
+*.pyc
+__pycache__
+db.sqlite3
+media
+
+# Environments 
+tr_dj/*
+tr_dj

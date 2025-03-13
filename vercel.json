@@ -1,0 +1,8 @@
+{
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "try_djano/wsgi.py"
+      }
+    ]
+  }
