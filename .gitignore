@@ -1,10 +1,10 @@
 
 notes/migrations/*
 notes/migrations
-try_djano/migrations/*
-try_djano/migrations
-try_djano/__pycache__/*
-try_djano/__pycache__
+api/migrations/*
+api/migrations
+api/__pycache__/*
+api/__pycache__
 
 .vercel
 *.log
