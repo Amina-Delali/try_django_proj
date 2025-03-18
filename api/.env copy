@@ -1,0 +1,5 @@
+DB_NAME= "learninglog"
+DB_USER= "learner"
+DB_PASSWORD= "m!mOP21?3T"
+DB_HOST= "localhost"
+DB_PORT= "5432"
