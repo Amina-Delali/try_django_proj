@@ -1,1 +1,1 @@
-placeholder bfor ui/static folder
+placeholder for ui/static folder
