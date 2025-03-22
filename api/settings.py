@@ -149,12 +149,16 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
-# Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# # Static asset configuration
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
+# # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join('notes' , 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
