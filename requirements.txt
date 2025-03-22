@@ -6,4 +6,5 @@ Markdown==3.7
 psycopg2-binary==2.9.10
 python-decouple==3.8
 sqlparse==0.5.3
+static3==0.7.0
 tzdata==2025.1
