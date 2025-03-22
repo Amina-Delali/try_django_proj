@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'notes',
+    'notes.apps.NotesConfig',
     'rest_framework',
 
 ]
@@ -144,13 +145,16 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
 # Static asset configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
@@ -159,6 +163,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-# STATIC_URL = 'static/'
-# STATICFILES_DIRS = os.path.join('notes' , 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR , 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile_build','static')
