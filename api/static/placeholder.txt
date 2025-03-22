@@ -1,0 +1,1 @@
+placeholder in api/static folder
