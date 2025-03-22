@@ -152,15 +152,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
-# Static asset configuration
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# BASE_DIR = Path(__file__).resolve().parent.parent
+
+
 
 
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles','static'))
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
+
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Static asset configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
