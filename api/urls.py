@@ -60,9 +60,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
+    path('api-auth/',       include('rest_framework.urls')),
     path('notes/', include(notes_urls)),
-    path('', include(notes_urls)),
+    path(r'', include((notes_urls,"notes"), namespace="notes"))
 
 ]
 

@@ -10,7 +10,7 @@ from notes.views import (
 )
 
 urlpatterns = [
-    path('api', NoteListApiView.as_view()),
+    path('api', NoteListApiView.as_view(), name='api'),
     path('api/<int:note_id>/', NoteDetailApiView.as_view()),
     path('', index)
 ]
