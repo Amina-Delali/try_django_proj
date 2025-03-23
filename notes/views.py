@@ -291,3 +291,6 @@ class NoteDetailApiView(APIView):
             {"res": "Object deleted!"},
             status=status.HTTP_200_OK
         )
+        
+def index(request):
+    return render(request, 'notes/index.html')        

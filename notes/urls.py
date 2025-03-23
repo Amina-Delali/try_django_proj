@@ -12,6 +12,7 @@ from notes.views import (
 urlpatterns = [
     path('api', NoteListApiView.as_view()),
     path('api/<int:note_id>/', NoteDetailApiView.as_view()),
+    path('', index)
 ]
 
 # from rest_framework import routers, serializers, viewsets
