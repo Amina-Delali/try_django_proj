@@ -1,0 +1,12 @@
+DB_NAME= "learninglog"
+DB_USER= "learninglog_owner"
+DB_PASSWORD= "npg_37cFrtynZlVj"
+DB_HOST= "ep-wild-band-a5f7i16u-pooler.us-east-2.aws.neon.tech"
+DB_PORT= "5432"
+PGUSER=learninglog_owner
+PGHOST=ep-wild-band-a5f7i16u-pooler.us-east-2.aws.neon.tech
+PGDATABASE=learninglog
+PGPASSWORD=npg_37cFrtynZlVj
+PGPORT=5432
+DATABASE_URL=postgresql://learninglog_owner:npg_37cFrtynZlVj@ep-curly-sun-a51j1v8y-pooler.us-east-2.aws.neon.tech/learninglog?sslmode=require
+DATABASE_URL_UNPOOLED=postgresql://learninglog_owner:npg_37cFrtynZlVj@ep-curly-sun-a51j1v8y.us-east-2.aws.neon.tech/learninglog?sslmode=require

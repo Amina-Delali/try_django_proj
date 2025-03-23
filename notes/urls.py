@@ -4,6 +4,16 @@ from django.urls import path, include
 
 from notes.views import *
 
+from notes.views import (
+    NoteListApiView,
+    NoteDetailApiView
+)
+
+urlpatterns = [
+    path('api', NoteListApiView.as_view()),
+    path('api/<int:note_id>/', NoteDetailApiView.as_view()),
+]
+
 # from rest_framework import routers, serializers, viewsets
 
 # # Serializers define the API representation.
@@ -30,9 +40,9 @@ from notes.views import *
 # router.register(r'users', views.UserViewSet)
 # router.register(r'groups', views.GroupViewSet)
 
-urlpatterns = [
-    path('', index),
-    # path('register/',RegisterView.as_view(),'register'),
-    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+# urlpatterns = [
+#     path('', index),
+#     # path('register/',RegisterView.as_view(),'register'),
+#     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     
-]
+# ]
