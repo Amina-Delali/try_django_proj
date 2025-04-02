@@ -4,6 +4,8 @@ charset-normalizer==3.4.1
 dj-database-url==2.3.0
 dj-static==0.0.6
 Django==5.1.7
+django-braces==1.17.0
+django-cors-headers==4.7.0
 django-filter==25.1
 django-oauth-toolkit==1.4.1
 djangorestframework==3.15.2
@@ -13,6 +15,7 @@ oauthlib==3.2.2
 psycopg2-binary==2.9.10
 python-decouple==3.8
 requests==2.32.3
+setuptools==78.1.0
 sqlparse==0.5.3
 static3==0.7.0
 typing_extensions==4.12.2
