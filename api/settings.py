@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#3uk139@nx3@9amzrk9@@n&qku+^k194hfj21xb1j7s4jvvcxy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.now.sh','localhost']
 
 
 # Application definition
@@ -44,11 +44,27 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'notes',
     'rest_framework',
+    'oauth2_provider',
+    'corsheaders',
+    'users',
 
 ]
 
+# AUTH_USER_MODEL = 'users.User'
+
+
+# LOGIN_URL = '/admin/login/'
+
+OAUTH2_PROVIDER = {
+        'ACCESS_TOKEN_EXPIRE_SECONDS': 60 * 15,
+        'OAUTH_SINGLE_ACCESS_TOKEN': True,
+        'OAUTH_DELETE_EXPIRED': True
+ }
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -56,13 +72,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'api.urls'
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': []  ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +94,9 @@ TEMPLATES = [
         },
     },
 ]
+
+LOGIN_REDIRECT_URL = '/api'
+
 
 WSGI_APPLICATION = 'api.wsgi.app'
 
@@ -93,13 +116,21 @@ DATABASES = {
 
     }
 }
-
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'}
+}
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    # 'rest_framework.permissions.IsAuthenticated',
+
     ],
+    #    'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    # ],
     
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10

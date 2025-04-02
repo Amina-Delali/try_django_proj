@@ -27,8 +27,10 @@
     
     
 from django.db import models
-from django.contrib.auth.models import User
-
+# from django.contrib.auth.models import User
+# from users import User
+from django.conf import settings
+User = settings.AUTH_USER_MODEL
 class Note(models.Model):
     task = models.CharField(max_length = 180)
     timestamp = models.DateTimeField(auto_now_add = True, auto_now = False, blank = True)
