@@ -111,13 +111,13 @@ urlpatterns = [
     # path('users/', UserList.as_view()),
     # path('users/<pk>/', UserDetails.as_view()),
     # path('groups/', GroupList.as_view()),
-    path('api-auth/',include('rest_framework.urls')),
+    path('api-auth/',include(('rest_framework.urls'),namespace="auth")),
     path("accounts/", include("django.contrib.auth.urls")),
 
     path('notes/', include(notes_urls)),
     path(r'', include((notes_urls,"notes"), namespace="notes")),
-    path(r'users/', include((users_urls,"users"),namespace="users")),
-    path('api/', include('users.urls')),
+    # path(r'users/', include((users_urls,"users"),namespace="users")),
+    path('api/', include(('users.urls',"users"), namespace="users"))
 
 
 ]
