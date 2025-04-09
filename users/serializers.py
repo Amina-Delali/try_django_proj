@@ -13,6 +13,12 @@ class RegisterUserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'first_name', 'last_name', 'password', 'confirm_password', 'is_staff', 'is_superuser' ]
         extra_kwargs = {'password': {'write_only': True}}
         
+    def validate(self, attrs):
+        if attrs['password'] != attrs['confirm_password']:
+            raise serializers.ValidationError({"password": "Password fields didn't match."})
+        
+
+    return attrs   
     def create(self, validated_data):
         user = User.objects.create_user(
             username= validated_data['username'],
